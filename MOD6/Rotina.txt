@@ -1,0 +1,24 @@
+programa {
+  funcao acordar() {
+    Escrever("Abrir os olhos \n")
+    Escrever("Pegar o celular \n")
+    Escrever("Desligar o alarme \n")
+  FimFuncao
+    
+    funcao levantar() {
+      inteiro opcao
+
+      Escrever("hoje é feriado?\n")
+      Escrever("Sim \n")
+      Escrever("Não \n")
+      leia(opcao);
+
+      se opcao = "Sim"
+        Escrever("Levantar e fazer tarefas antes de sair\n")
+      senao se opcao = "Não"
+        Escrever("Descansar mais 5 minutinhos\n")
+      FimSe
+      FimFuncao
+    }
+  }
+}
