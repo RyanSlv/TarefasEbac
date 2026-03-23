@@ -14,7 +14,7 @@ public class Main {
         System.out.print("Digite os nomes (ex: Ana -f, João -m): ");
         String nome2 = leia2.nextLine();
 
-        String[] nome2Sep = nome2.split(",");
+        String[] nome2Sep = nome2.split(", ");
 
         for (int x = 0; x < nome2Sep.length; x++) {
             Nomes.add(nome2Sep[x].trim());
