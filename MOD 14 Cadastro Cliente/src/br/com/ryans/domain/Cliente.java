@@ -13,7 +13,7 @@ public class Cliente {
     private String cidade;
     private String estado;
 
-    public Cliente(String nome,String cpf,String tel,String end,String numero,String cidade) {
+    public Cliente(String nome, String cpf, String tel, String end, String numero, String cidade, String dadosSeparado) {
         this.nome = nome;
         this.cpf = Long.valueOf(cpf.trim());
         this.tel = Long.valueOf(tel.trim());

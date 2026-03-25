@@ -18,7 +18,16 @@ public class App {
                 "Digite 1 para cadastro, 2 para consultar, 3 para exclusão, 4 para alteração ou 5 para sair. ",
                 "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 
+        if (opcao == null) {
+            sair();
+        }
+
         while (!isOpcaoValida(opcao)) {
+
+            if (opcao == null) {
+                sair();
+
+            }
             if ("".equals(opcao)) {
                 sair();
             }
@@ -34,7 +43,7 @@ public class App {
 
             } else if (isCadastro(opcao)) {
                 String dados = JOptionPane.showInputDialog(null,
-                        "Digite os dados do cliente separados por vírgula, conforme exemplo: Nome, CPF, Telefone, Endereço, Número, Cidade e Estado. ",
+                        "\"Digite os dados separados por vírgula:\\nNome, CPF, Telefone, Endereço, Número, Cidade, Estado.\\nCaso não tenha algum campo, digite null.",
                         JOptionPane.INFORMATION_MESSAGE);
                 cadastrar(dados);
 
@@ -54,13 +63,16 @@ public class App {
                 String dados = JOptionPane.showInputDialog(null,
                         "Digite os dados do cliente separados por vírgula, conforme exemplo: Nome, CPF, Telefone, Endereço, Número, Cidade e Estado. ",
                         "Atualização", JOptionPane.INFORMATION_MESSAGE);
-                // se tiver método alterar, pode chamar aqui
+                alterar(dados);
             }
 
             opcao = JOptionPane.showInputDialog(null,
                     "Digite 1 para cadastro, 2 para consultar, 3 para exclusão, 4 para alteração ou 5 para sair. ",
                     "Cadastro", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+
+    private static void alterar(String dados) {
     }
 
     private static void consultar(String dados) {
@@ -81,7 +93,7 @@ public class App {
 
     private static void cadastrar(String dados) {
         String[] dadosSeparados = dados.split(",");
-        Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5]);
+        Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);
         Boolean isCadastrado = iClienteDAO.cadastrar(cliente);
 
         if (isCadastrado) {
