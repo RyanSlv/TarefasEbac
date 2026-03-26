@@ -1,6 +1,7 @@
 package br.com.ryans.factory;
 
 public abstract class Factory {
+    public abstract Car retrieveCar(String requestedGrade);
 
     public Car create(String requetedGrade) {
         Car car = retrieveCar(requetedGrade);
@@ -14,6 +15,4 @@ public abstract class Factory {
         car.fuelCar();
         return car;
     }
-    abstract Car retrieveCar(String requestedGrade);
-
 }
