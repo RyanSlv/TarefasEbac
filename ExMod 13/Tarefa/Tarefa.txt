@@ -1,0 +1,20 @@
+Respostas
+
+1. Padrão de dependência é um padrão que usa interfaces ou classes abstratas, em vez de depender diretamente de implementações.
+
+Ela pode ser realizada de 3 formas:
+
+	pelo construtor
+	por métodos setters
+	por interface
+
+2. Como o Spring trabalha com isso:
+
+O spring gerencia a injeção de dependência através de um container chamado Spring Context.
+Esse container cuida automaticamente dos objetos da aplicação, chamados de beans. Esses beans são classes comuns, mas que recebem anotações para que o Spring possa controlá-las e injetar suas dependências.
+
+3. O que eu entendi:
+
+A injeção de dependência serve para deixar o código menos acoplado e mais fácil de manter.
+Com isso, o sistema fica mais organizado, simples de modificar e evoluir. Basicamente, um objeto recebe o que precisa para funcionar, em vez de criar suas próprias dependências assim ajudando na legibilidade e reutilização do código. 
+
