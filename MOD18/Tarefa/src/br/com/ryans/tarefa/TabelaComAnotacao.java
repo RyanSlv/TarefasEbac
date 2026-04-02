@@ -1,5 +1,6 @@
 package br.com.ryans.tarefa;
 
+
 @TabelaAnotacao(
         value = "Carro Esportivo",
         marcas = {"Ferrari, Lamborghini"},
