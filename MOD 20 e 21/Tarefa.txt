@@ -1,0 +1,29 @@
+	Expressões Lambda:
+
+Expressões Lambda são as funções anônimas, ou seja, não tem nome e podem ser escritas direto onde serão usadas, sem precisar criar uma classe ou método separado.
+
+No Java, elas são usadas principalmente com interfaces funcionais (interfaces com apenas um método), servindo para implementar esse método de forma mais simples e rápida.
+
+
+	Diferenças para outras expressões:
+
+A principal diferença é que, no jeito tradicional, você precisa criar um método ou até uma classe para executar uma ação. Já com lambda, você escreve a função direto ao ponto onde ela será utilizada.
+
+	Características:
+
+
+	Redução a quantidade de código, evitando criar muitas classes e linhas desnecessárias, o que agiliza o desenvolvimento.
+
+	O tipo dos parâmetros pode ser omitido, ja que o Java consegue identificar automaticamente.
+	
+	Os parênteses podem ser deixados de lado quando há apenas um parâmetro, mas continuam obrigatórios com mais de um.
+	
+	As chaves não são necessárias quando existe apenas uma instrução na lambda.
+
+	O return não precisa ser escrito em expressões simples, pois o valor já é retornado automaticamente. 
+
+
+	Minha Opinião:
+
+
+No começo parece um pouco estranho por causa da sintaxe diferente, mas depois que entende a lógica fica bem pratico de usar. Acho util principalmente para evitar com que o código fique repetitivo. 
