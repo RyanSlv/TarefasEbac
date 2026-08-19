@@ -29,6 +29,11 @@ public class ContratoService implements IContratoService {
     }
 
     @Override
+    public boolean excluirContrato(int id) {
+        return true;
+    }
+
+    @Override
     public boolean atualizarContrato(ContratoDAOMock contrato) {
         return true;
     }
