@@ -1,6 +1,6 @@
 package br.com.ryans.Service;
 
-import br.com.ryans.DAO.ContratoDAOMock;
+import br.com.ryans.DAO.Mocks.ContratoDAOMock;
 import br.com.ryans.DAO.IContratoDAO;
 
 public class ContratoService implements IContratoService {

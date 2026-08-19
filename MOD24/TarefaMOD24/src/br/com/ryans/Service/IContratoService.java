@@ -1,6 +1,6 @@
 package br.com.ryans.Service;
 
-import br.com.ryans.DAO.ContratoDAOMock;
+import br.com.ryans.DAO.Mocks.ContratoDAOMock;
 
 public interface IContratoService {
     String salvar();

@@ -1,6 +1,6 @@
 package br.com.ryans;
 
-import br.com.ryans.DAO.ContratoDAOMock;
+import br.com.ryans.DAO.Mocks.ContratoDAOMock;
 import br.com.ryans.DAO.ContratoDAO;
 import br.com.ryans.DAO.IContratoDAO;
 import br.com.ryans.Service.ContratoService;
@@ -38,7 +38,18 @@ public class ContratoServiceTest {
     }
 
     @Test
-    public void atualizarContratoTest() {
+    public void excluirContratoTest() {
+        IContratoDAO dao = new ContratoDAOMock();
+        IContratoService service = new ContratoService(dao);
+
+        int contratoID = 1;
+
+        boolean excluido = service.excluirContrato(contratoID);
+        Assert.assertTrue(excluido);
+    }
+
+    @Test
+    public void atualizarContratoTest(){
         IContratoDAO dao = new ContratoDAOMock();
         IContratoService service = new ContratoService(dao);
 
@@ -46,7 +57,6 @@ public class ContratoServiceTest {
         contrato.setValorTotal(100.0);
 
         service.atualizarContrato(contrato);
-
         Assert.assertEquals(100, contrato.getValorTotal(), 0.01);
     }
 }
