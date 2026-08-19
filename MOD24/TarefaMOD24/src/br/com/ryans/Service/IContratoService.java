@@ -1,5 +1,7 @@
 package br.com.ryans.Service;
 
+import br.com.ryans.DAO.ContratoDAOMock;
+
 public interface IContratoService {
     String salvar();
 
@@ -7,5 +9,5 @@ public interface IContratoService {
 
     boolean excluirContrato(int id);
 
-    boolean atualizarContrato(int id);
+    boolean atualizarContrato(ContratoDAOMock contrato);
 }

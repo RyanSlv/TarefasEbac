@@ -2,10 +2,8 @@ package br.com.ryans.Service;
 
 import br.com.ryans.DAO.ContratoDAOMock;
 import br.com.ryans.DAO.IContratoDAO;
-import.br.com.ryans.DAO.ContratoDAOMock;
 
 public class ContratoService implements IContratoService {
-
 
     private final IContratoDAO contratoDAO;
 
@@ -31,12 +29,7 @@ public class ContratoService implements IContratoService {
     }
 
     @Override
-    public boolean excluirContrato(int id) {
-        return true;
-    }
-
-    @Override
-    public boolean atualizarContrato(int id) {
+    public boolean atualizarContrato(ContratoDAOMock contrato) {
         return true;
     }
 }
