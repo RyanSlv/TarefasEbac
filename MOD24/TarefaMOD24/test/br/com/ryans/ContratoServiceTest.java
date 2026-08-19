@@ -32,9 +32,9 @@ public class ContratoServiceTest {
         IContratoService service = new ContratoService();
 
         int contratoID = 1;
-        boolean excluido = service.excluirContrato(contratoID);
+        int contratoEncontrado = service.buscarContrato(contratoID);
 
-        Assert.assertTrue(excluido);
+        Assert.assertEquals(contratoID, contratoEncontrado);
     }
 
     @Test
@@ -56,7 +56,9 @@ public class ContratoServiceTest {
         ContratoDAOMock contrato = new ContratoDAOMock();
         contrato.setValorTotal(100.0);
 
-        service.atualizarContrato(contrato);
+        boolean atualizado = service.atualizarContrato(contrato);
+
+        Assert.assertTrue(atualizado);
         Assert.assertEquals(100, contrato.getValorTotal(), 0.01);
     }
 }
