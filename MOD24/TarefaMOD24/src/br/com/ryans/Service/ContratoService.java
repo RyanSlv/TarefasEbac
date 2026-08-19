@@ -1,6 +1,8 @@
 package br.com.ryans.Service;
 
+import br.com.ryans.DAO.ContratoDAOMock;
 import br.com.ryans.DAO.IContratoDAO;
+import.br.com.ryans.DAO.ContratoDAOMock;
 
 public class ContratoService implements IContratoService {
 
@@ -9,6 +11,11 @@ public class ContratoService implements IContratoService {
 
     public ContratoService(IContratoDAO dao) {
         this.contratoDAO = dao;
+    }
+
+    public ContratoService() {
+        this.contratoDAO = new ContratoDAOMock();
+
     }
 
     @Override

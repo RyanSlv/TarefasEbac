@@ -3,9 +3,17 @@ import br.com.ryans.DAO.IContratoDAO;
 
 public class ContratoDAOMock implements IContratoDAO {
 
-    @Override
-    public String salvar() {
-        return  null;
+    private double valorTotal;
 
+    @Override
+    public void salvar() {
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 }
