@@ -5,7 +5,7 @@ import br.com.ryans.DAO.IContratoDAO;
 public class ContratoService implements IContratoService {
 
 
-    private IContratoDAO contratoDAO;
+    private final IContratoDAO contratoDAO;
 
     public ContratoService(IContratoDAO dao) {
         this.contratoDAO = dao;
@@ -15,5 +15,21 @@ public class ContratoService implements IContratoService {
     public String salvar() {
         contratoDAO.salvar();
         return "Sucesso";
+    }
+
+    @Override
+    public int buscarContrato(int id) {
+        return id;
+
+    }
+
+    @Override
+    public boolean excluirContrato(int id) {
+        return true;
+    }
+
+    @Override
+    public boolean atualizarContrato(int id) {
+        return true;
     }
 }
