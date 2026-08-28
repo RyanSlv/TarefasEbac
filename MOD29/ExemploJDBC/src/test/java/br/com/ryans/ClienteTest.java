@@ -128,7 +128,7 @@ public class ClienteTest {
 		Integer countUpdate = clienteDAO.atualizar(clienteBD);
 		assertTrue(countUpdate == 1);
 		
-		Cliente clienteBD1 = clienteDAO.buscar("20");
+		Cliente clienteBD1 = clienteDAO.buscar("10");
 		assertNull(clienteBD1);
 		
 		Cliente clienteBD2 = clienteDAO.buscar("20");

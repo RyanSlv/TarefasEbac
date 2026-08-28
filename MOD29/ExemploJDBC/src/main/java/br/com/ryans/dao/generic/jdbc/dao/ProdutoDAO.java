@@ -78,7 +78,7 @@ public class ProdutoDAO implements IProdutoDAO {
 		}	catch (Exception e) {
 			throw e;
 		}	finally {
-			closeConnection(connection, stm, null);
+			closeConnection(connection, stm, rs);
 		}	return produto;
 	}
 	
@@ -132,7 +132,7 @@ public class ProdutoDAO implements IProdutoDAO {
 		}	catch (Exception e) {
 			throw e;
 		}	finally {
-			closeConnection(connection, stm, null);
+			closeConnection(connection, stm, rs);
 		}
 		return list;
 	}
@@ -168,7 +168,7 @@ public class ProdutoDAO implements IProdutoDAO {
 	private String getSqlInsert() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO PRODUTOS (NOME, PRECO, QUANTIDADE)");
-		sb.append("VALUES (?, ?, ?)");
+		sb.append(" VALUES (?, ?, ?)");
 		return sb.toString();
 	}
 	
