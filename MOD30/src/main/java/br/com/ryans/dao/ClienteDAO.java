@@ -18,7 +18,7 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 	}
 
 	@Override
-	public void atualiarDados(Cliente entity, Cliente entityCadastrado) {
+	public void atualizarDados(Cliente entity, Cliente entityCadastrado) {
 		entityCadastrado.setCidade(entity.getCidade());
 		entityCadastrado.setCpf(entity.getCpf());
 		entityCadastrado.setEnd(entity.getEnd());
@@ -71,7 +71,7 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 		sb.append("ENDERECO = ?,");
 		sb.append("NUMERO = ?,");
 		sb.append("CIDADE = ?,");
-		sb.append("ESTADO = ?");
+		sb.append("ESTADO = ?,");
 		sb.append("EMAIL = ?,");
 		sb.append(" WHERE CPF = ?");
 		return sb.toString();
