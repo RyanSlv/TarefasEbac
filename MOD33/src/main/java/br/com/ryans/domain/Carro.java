@@ -17,7 +17,7 @@ public class Carro {
 	private String modelo;
 	
 	@ManyToOne
-	@JoinColumn(name = "marca_id")
+	@JoinColumn(name = "marca_id", nullable = false)
 	private Marca marca; 
 	
 	@OneToMany(mappedBy = "carro", cascade = CascadeType.ALL)

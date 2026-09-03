@@ -15,7 +15,7 @@ import jakarta.persistence.*;
 		private String nome;
 		
 		@ManyToOne
-		@JoinColumn(name = "carro_id")
+		@JoinColumn(name = "carro_id", nullable = false)
 		private Carro carro;
 
 		public Long getId() {
