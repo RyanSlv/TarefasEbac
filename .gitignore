@@ -1,1 +1,7 @@
-*.class.idea/
+target/
+bin/
+*.class
+.settings/
+.project
+.classpath
+.idea/
