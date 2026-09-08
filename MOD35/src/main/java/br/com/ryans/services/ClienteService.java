@@ -7,38 +7,21 @@ import br.com.ryans.exceptions.MaisDeUmRegistroException;
 import br.com.ryans.exceptions.TableException;
 import br.com.ryans.services.generic.GenericService;
 
-public class ClienteService extends GenericService<Cliente, Long> implements IClienteService {
-	
-//	private IClienteDAO clienteDAO;
-	
-	public ClienteService(IClienteDAO clienteDAO) {
-		super(clienteDAO);
-//		this.clienteDAO = clienteDAO;
-	}
+public class ClienteService
+        extends GenericService<Cliente, Long>
+        implements IClienteService {
 
-//	@Override
-//	public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
-//		return clienteDAO.cadastrar(cliente);
-//	}
+    public ClienteService(IClienteDAO clienteDAO) {
+        super(clienteDAO);
+    }
 
-	@Override
-	public Cliente buscarPorCPF(Long cpf) throws DAOException {
-		try {
-			return this.dao.consultar(cpf);
-		} catch (MaisDeUmRegistroException | TableException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-//	@Override
-//	public void excluir(Long cpf) {
-//		clienteDAO.excluir(cpf);
-//	}
-//
-//	@Override
-//	public void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException{
-//		clienteDAO.alterar(cliente);
-//	}
-
+    @Override
+    public Cliente buscarPorCPF(Long cpf) throws DAOException {
+        try {
+            return this.dao.consultar(cpf);
+        } catch (MaisDeUmRegistroException | TableException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
