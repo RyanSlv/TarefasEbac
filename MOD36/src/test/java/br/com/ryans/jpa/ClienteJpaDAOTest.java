@@ -18,14 +18,14 @@ import br.com.ryans.exceptions.TableException;
 import br.com.ryans.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteJpaDAOTest {
-	
-	private IClienteJpaDAO clienteDao;
-	
+
+	private IClienteJpaDAO<ClienteJpa> clienteDao;
+
 	private Random rd;
-	
+
 	public ClienteJpaDAOTest() {
-		this.clienteDao = new ClienteJpaDAO();
-		rd = new Random();
+		this.clienteDao=new ClienteJpaDAO();
+		rd=new Random();
 	}
 	
 	@After

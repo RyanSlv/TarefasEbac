@@ -1,11 +1,11 @@
 package br.com.ryans.dao.jpa;
 
-import br.com.ryans.dao.generic.jpa.GenericJpaDB2DAO;
-import br.com.ryans.domain.jpa.ClienteJpa;
+import br.com.ryans.dao.generic.jpa.GenericJpaDB3DAO;
+import br.com.ryans.domain.jpa.ClienteJpa2;
 
-public abstract class ClienteJpaDB3DAO extends GenericJpaDB2DAO<ClienteJpa, Long> implements IClienteJpaDAO<ClienteJpa> {
+public class ClienteJpaDB3DAO extends GenericJpaDB3DAO<ClienteJpa2,Long> implements IClienteJpaDAO<ClienteJpa2> {
 
 	public ClienteJpaDB3DAO() {
-		super(ClienteJpa.class);
+		super(ClienteJpa2.class);
 	}
 }
