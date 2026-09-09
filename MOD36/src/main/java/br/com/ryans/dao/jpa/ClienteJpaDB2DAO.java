@@ -8,4 +8,4 @@ public class ClienteJpaDB2DAO extends GenericJpaDB2DAO<ClienteJpa,Long> implemen
 	public ClienteJpaDB2DAO() {
 		super(ClienteJpa.class);
 	}
-}S
+}
