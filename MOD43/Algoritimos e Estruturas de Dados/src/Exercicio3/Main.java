@@ -9,17 +9,17 @@ public class Main {
         lista.push(20);
         lista.push(10);
 
-        System.out.println("Lista inicial: ");
+        System.out.print("Lista inicial: ");
         lista.printList();
 
         lista.insert(1, 15);
 
-        System.out.println("Após inserir: ");
+        System.out.print("Após inserir: ");
         lista.printList();
 
         lista.remove(2);
 
-        System.out.println("Após remover: ");
+        System.out.print("Após remover: ");
         lista.printList();
 
         System.out.println("Elemento índice 1: " + lista.elementAt(1).getValor());
@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println("Tamanho: " + lista.size());
 
-        System.out.println("Lista final: ");
+        System.out.print("Lista final: ");
         lista.printList();
     }
 }
