@@ -1,0 +1,415 @@
+ANÁLISE DA COMPLEXIDADE ASSINTÓTICA DE TEMPO E ESPAÇO
+EM DIFERENTES ESTRUTURAS DE DADOS
+
+O valor n representa a quantidade de elementos da estrutura.
+A complexidade de espaço corresponde à memória adicional utilizada
+durante a execução de cada método.
+
+
+============================================================
+1. PILHA (STACK)
+============================================================
+
+1.1 Método push(int valor)
+
+Primeiro, verifica se existe espaço disponível no array:
+
+if (tamanho == elementos.length)
+
+Caso esteja cheio, cria um novo array com o dobro da capacidade
+e copia os elementos existentes:
+
+int[] novo = new int[elementos.length * 2];
+
+for (int i = 0; i < tamanho; i++) {
+    novo[i] = elementos[i];
+}
+
+Depois, adiciona o valor no topo e incrementa o tamanho:
+
+elementos[tamanho] = valor;
+tamanho++;
+
+Complexidade de tempo: O(1) amortizado e O(n) no pior caso.
+
+Justificativa:
+Normalmente, a inserção ocorre diretamente no topo da pilha,
+sem percorrer os elementos. Quando o array está cheio, é
+necessário copiar n elementos. Como a capacidade dobra a cada
+expansão, o custo amortizado de inserção permanece O(1).
+
+Complexidade de espaço: O(1) normalmente e O(n) no pior caso.
+
+Justificativa:
+Uma inserção comum utiliza apenas variáveis auxiliares.
+Durante a expansão, um novo array é criado, exigindo memória
+adicional proporcional à quantidade de elementos.
+
+
+1.2 Método pop()
+
+Verifica se a pilha está vazia:
+
+if (isEmpty())
+
+Caso esteja vazia, lança uma exceção.
+
+Depois, decrementa o tamanho e retorna o elemento do topo:
+
+tamanho--;
+return elementos[tamanho];
+
+Complexidade de tempo: O(1).
+
+Justificativa:
+A remoção é realizada diretamente no topo, sem necessidade
+de percorrer os demais elementos.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+O método utiliza apenas operações e variáveis de controle,
+sem criar estruturas auxiliares proporcionais ao tamanho
+da pilha.
+
+
+============================================================
+2. FILA (QUEUE)
+============================================================
+
+2.1 Método enqueue(int valor)
+
+Primeiro, verifica se o array está cheio:
+
+if (tamanho == elementos.length)
+
+Caso esteja cheio, cria um novo array e copia os elementos
+existentes, respeitando a ordem da fila:
+
+int[] novo = new int[elementos.length * 2];
+
+for (int i = 0; i < tamanho; i++) {
+    novo[i] = elementos[(inicio + i) % elementos.length];
+}
+
+Depois, calcula a posição final e adiciona o valor:
+
+int fim = (inicio + tamanho) % elementos.length;
+elementos[fim] = valor;
+tamanho++;
+
+Complexidade de tempo: O(1) amortizado e O(n) no pior caso.
+
+Justificativa:
+Normalmente, o elemento é inserido diretamente na posição
+final da fila. Quando ocorre expansão, todos os elementos
+precisam ser copiados para o novo array, resultando em O(n).
+Como a capacidade dobra, o custo amortizado é O(1).
+
+Complexidade de espaço: O(1) normalmente e O(n) no pior caso.
+
+Justificativa:
+A inserção comum utiliza apenas variáveis auxiliares.
+Quando ocorre expansão, é necessário criar outro array
+com capacidade proporcional à quantidade de elementos.
+
+
+2.2 Método dequeue()
+
+Primeiro, verifica se a fila está vazia.
+
+Depois, armazena o primeiro valor:
+
+int valor = elementos[inicio];
+
+Atualiza o índice de início e decrementa o tamanho:
+
+inicio = (inicio + 1) % elementos.length;
+tamanho--;
+
+Por último, retorna o valor removido:
+
+return valor;
+
+Complexidade de tempo: O(1).
+
+Justificativa:
+A remoção ocorre diretamente no início da fila.
+Como utilizamos um array circular, não é necessário
+deslocar os outros elementos.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+O método utiliza apenas uma variável para armazenar
+o valor removido e atualiza as variáveis de controle.
+
+
+2.3 Método rear()
+
+Verifica se a fila está vazia.
+
+Depois, calcula o índice do último elemento:
+
+int fim = (inicio + tamanho - 1) % elementos.length;
+
+Retorna o valor:
+
+return elementos[fim];
+
+Complexidade de tempo: O(1).
+
+Justificativa:
+O método calcula diretamente o índice do último elemento,
+sem percorrer a fila.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+Utiliza apenas uma variável auxiliar para calcular
+a posição do elemento.
+
+
+2.4 Método front()
+
+Verifica se a fila está vazia.
+
+Depois, retorna o elemento localizado no início:
+
+return elementos[inicio];
+
+Complexidade de tempo: O(1).
+
+Justificativa:
+O primeiro elemento é acessado diretamente pelo índice
+de início, sem necessidade de percorrer a fila.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+Não cria estruturas auxiliares e utiliza apenas
+as informações já armazenadas.
+
+
+============================================================
+3. LISTA ENCADEADA (LINKED LIST)
+============================================================
+
+3.1 Método push(int valor)
+
+Primeiro, cria um novo nó:
+
+Node novo = new Node(valor);
+
+Depois, conecta o novo nó ao início atual:
+
+novo.proximo = inicio;
+
+Atualiza a referência de início e incrementa o tamanho:
+
+inicio = novo;
+tamanho++;
+
+Complexidade de tempo: O(1).
+
+Justificativa:
+A inserção ocorre diretamente no início da lista,
+sem necessidade de percorrer os demais nós.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+O método cria apenas um novo nó e utiliza uma quantidade
+constante de referências.
+
+
+3.2 Método pop()
+
+Primeiro, verifica se a lista está vazia.
+
+Depois, armazena a referência do primeiro nó:
+
+Node removido = inicio;
+
+Atualiza a referência de início:
+
+inicio = inicio.proximo;
+
+Desconecta o nó removido e decrementa o tamanho:
+
+removido.proximo = null;
+tamanho--;
+
+Por último, retorna o nó removido:
+
+return removido;
+
+Complexidade de tempo: O(1).
+
+Justificativa:
+A remoção ocorre diretamente no primeiro nó.
+Não é necessário percorrer a lista.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+O método utiliza apenas uma referência auxiliar
+para armazenar o nó removido.
+
+
+3.3 Método insert(int index, int valor)
+
+Primeiro, verifica se o índice informado é válido.
+
+Caso a inserção ocorra no índice zero, utiliza push().
+
+Para outras posições, localiza o nó anterior:
+
+Node anterior = elementAt(index - 1);
+
+Depois, cria um novo nó e atualiza as referências:
+
+Node novo = new Node(valor);
+
+novo.proximo = anterior.proximo;
+anterior.proximo = novo;
+tamanho++;
+
+Complexidade de tempo: O(n) no pior caso.
+
+Justificativa:
+O método elementAt() percorre a lista até encontrar
+o nó anterior à posição desejada. No pior caso, esse
+percurso é proporcional à quantidade de elementos.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+O método cria apenas um novo nó e utiliza referências
+auxiliares, independentemente do tamanho da lista.
+
+
+3.4 Método remove(int index)
+
+Primeiro, verifica se o índice informado é válido.
+
+Caso a remoção ocorra no índice zero, utiliza pop().
+
+Para outras posições, localiza o nó anterior:
+
+Node anterior = elementAt(index - 1);
+
+Depois, altera a referência para ignorar o nó removido:
+
+anterior.proximo = anterior.proximo.proximo;
+
+Por último, decrementa o tamanho:
+
+tamanho--;
+
+Complexidade de tempo: O(n) no pior caso.
+
+Justificativa:
+O método precisa percorrer a lista até encontrar
+o nó anterior ao elemento que será removido.
+No pior caso, percorre uma quantidade de nós
+proporcional a n.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+A remoção utiliza apenas referências auxiliares,
+sem criar novas estruturas de dados.
+
+
+3.5 Método elementAt(int index)
+
+Primeiro, verifica se o índice informado é válido.
+
+Depois, cria uma referência para o início da lista:
+
+Node atual = inicio;
+
+Percorre os nós até alcançar o índice solicitado:
+
+for (int i = 0; i < index; i++) {
+    atual = atual.proximo;
+}
+
+Por último, retorna o nó encontrado:
+
+return atual;
+
+Complexidade de tempo: O(n) no pior caso.
+
+Justificativa:
+A lista é percorrida sequencialmente desde o primeiro nó.
+No pior caso, é necessário percorrer praticamente todos
+os elementos para localizar a posição desejada.
+
+Complexidade de espaço: O(1).
+
+Justificativa:
+O método utiliza apenas uma referência auxiliar,
+independentemente da quantidade de nós existentes.
+
+
+============================================================
+4. CONCLUSÃO GERAL
+============================================================
+
+Na pilha, as operações de inserção e remoção normalmente
+possuem tempo constante. Entretanto, a inserção pode
+apresentar custo O(n) quando ocorre expansão do array.
+
+Na fila, a utilização de um array circular permite remover
+e consultar os elementos diretamente, sem deslocamentos.
+A inserção também pode exigir O(n) durante uma expansão.
+
+Na lista encadeada, as operações realizadas diretamente
+no início apresentam complexidade O(1). Já os métodos
+que precisam localizar uma posição podem apresentar O(n),
+pois percorrem os nós sequencialmente.
+
+Em relação ao espaço adicional, as operações analisadas
+utilizam O(1), com exceção das expansões dos arrays da
+pilha e da fila, que exigem O(n).
+
+
+============================================================
+5. RESUMO DAS COMPLEXIDADES
+============================================================
+
+PILHA
+
+Método       Tempo                       Espaço adicional
+push()       O(1) amortizado / O(n)      O(1) / O(n)
+pop()        O(1)                        O(1)
+
+
+FILA
+
+Método       Tempo                       Espaço adicional
+enqueue()    O(1) amortizado / O(n)      O(1) / O(n)
+dequeue()    O(1)                        O(1)
+rear()       O(1)                        O(1)
+front()      O(1)                        O(1)
+
+
+LISTA ENCADEADA
+
+Método       Tempo                       Espaço adicional
+push()       O(1)                        O(1)
+pop()        O(1)                        O(1)
+insert()     O(n)                        O(1)
+remove()     O(n)                        O(1)
+elementAt()  O(n)                        O(1)
+
+
+Observação:
+Os valores O(n) da lista encadeada representam o pior caso.
+As operações de inserção e remoção no início são O(1).
+
+Para push() da pilha e enqueue() da fila, os valores O(n)
+representam as operações em que é necessário expandir
+o array.
