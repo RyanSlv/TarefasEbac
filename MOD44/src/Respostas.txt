@@ -11,7 +11,7 @@ Na solução recursiva, a condição de parada ocorre quando o valor de n é igu
 É possível calcular o fatorial de um número acima de 100 utilizando recursividade, porém é necessário utilizar
 BigInteger, pois os tipos int e long não possuem capacidade para armazenar números tão grandes.
 
-Mesmo utilizando BigInteger, a solução recursiva possui uma limitação prática, pois cada chamada é armazenada da pilha
+Mesmo utilizando BigInteger, a solução recursiva possui uma limitação prática, pois cada chamada é armazenada na pilha
 de execução. Para valores extremamente altos, pode ocorrer StackOverflowError.
 
 A complexidade de tempo da solução recursiva do fatorial é O(n).
@@ -20,7 +20,7 @@ EXERCÍCIO 2
 
 Na abordagem Top Down, o problema é resolvido de cima para baixo utilizando recursividade.
 
-Foi utilizado array de memoização para armazenar os resultados já calculados. Dessa forma, caso determinado resultado
+Foi utilizado um array de memoização para armazenar os resultados já calculados. Dessa forma, caso determinado resultado
 já exista, ele pode ser reutilizado.
 
 Na abordagem Bottom Up, o cálculo é realizado de forma iterativa. O algoritmo começa pelos menores valores e continua
@@ -28,7 +28,7 @@ até chegar ao valor solicitado.
 
 No caso do fatorial, tanto a solução Top Down quanto a Bottom Up possuem complexidade de tempo O(n).
 
-A principal diferença é que a solução Top Down utiliza recursividade e memória adicional para armazenar as chamadas da
+A principal diferença é que a solução Top Down utiliza recursividade e memória adicional para armazenar as chamadas na
 pilha, enquanto a solução Bottom Up utiliza um laço de repetição e não necessita de chamadas recursivas.
 
 No cálculo de fatorial, a programação dinâmica não apresenta uma grande redução de complexidade, pois cada valor depende

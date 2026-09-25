@@ -13,6 +13,6 @@ public class FibonacciRecursivo {
     public static void main(String[] args) {
         int n = 10;
 
-        System.out.println("Fibonacci  de " + n + " é: " + fibonacci(n));
+        System.out.println("Fibonacci de " + n + " é: " + fibonacci(n));
     }
 }

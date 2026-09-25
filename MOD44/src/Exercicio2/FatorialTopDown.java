@@ -23,7 +23,7 @@ public class FatorialTopDown {
     public static void main(String[] args) {
         int n = 7;
 
-        memo = new  BigInteger[n + 1];
+        memo = new BigInteger[n + 1];
 
         System.out.println("Fatorial de " + n + " é: " + calcularFatorial(n));
     }

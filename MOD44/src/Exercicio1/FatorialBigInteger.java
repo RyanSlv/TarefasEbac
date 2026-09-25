@@ -14,7 +14,7 @@ public class FatorialBigInteger {
     }
 
     public static void main(String[] args) {
-        BigInteger n = BigInteger.valueOf(100);
+        BigInteger n = BigInteger.valueOf(101);
 
         System.out.println("Fatorial de " + n + " é:");
         System.out.println(calcularFatorial(n));
