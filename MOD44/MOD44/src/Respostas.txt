@@ -1,0 +1,67 @@
+EXERCÍCIO 1
+
+O fatorial de um número é calculado multiplicando o número por todos os inteiros positivos menores que ele.
+
+Exemplo:
+3! = 3 x 2 x 1 = 6
+7! = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5040
+
+Na solução recursiva, a condição de parada ocorre quando o valor de n é igual a 0 ou 1, pois 0! e 1! são iguais a 1.
+
+É possível calcular o fatorial de um número acima de 100 utilizando recursividade, porém é necessário utilizar
+BigInteger, pois os tipos int e long não possuem capacidade para armazenar números tão grandes.
+
+Mesmo utilizando BigInteger, a solução recursiva possui uma limitação prática, pois cada chamada é armazenada da pilha
+de execução. Para valores extremamente altos, pode ocorrer StackOverflowError.
+
+A complexidade de tempo da solução recursiva do fatorial é O(n).
+
+EXERCÍCIO 2
+
+Na abordagem Top Down, o problema é resolvido de cima para baixo utilizando recursividade.
+
+Foi utilizado array de memoização para armazenar os resultados já calculados. Dessa forma, caso determinado resultado
+já exista, ele pode ser reutilizado.
+
+Na abordagem Bottom Up, o cálculo é realizado de forma iterativa. O algoritmo começa pelos menores valores e continua
+até chegar ao valor solicitado.
+
+No caso do fatorial, tanto a solução Top Down quanto a Bottom Up possuem complexidade de tempo O(n).
+
+A principal diferença é que a solução Top Down utiliza recursividade e memória adicional para armazenar as chamadas da
+pilha, enquanto a solução Bottom Up utiliza um laço de repetição e não necessita de chamadas recursivas.
+
+No cálculo de fatorial, a programação dinâmica não apresenta uma grande redução de complexidade, pois cada valor depende
+somente do valor anterior.
+
+EXERCÍCIO 3
+
+Na solução recursiva simples de Fibonacci, cada chamada pode gerar duas novas chamadas:
+
+F(n) = F(n - 1) + F(n - 2)
+
+Isso faz com que vários valores sejam calculados repetidamente.
+
+Por exemplo, durante o cálculo de Fibonacci de 5, os valores de Fibonacci de 3 e Fibonacci de 2 são calculados mais de
+uma vez.
+
+Por esse motivo, a complexidade de tempo da solução recursiva simples é aproximadamente O(2^n).
+
+Na solução utilizando programação dinâmica, os valores já calculados são armazenados e reutilizados.
+
+Dessa forma, cada posição da sequência precisa ser calculada apenas uma vez.
+
+A complexidade de tempo da solução utilizando programação dinâmica é O(n).
+
+A programação dinâmica é melhor porque evita cálculos repetidos. Conforme o valor de n aumenta, a diferença de
+desempenho entre O(2^n) e O(n) se torna muito grande.
+
+Comparação:
+
+Fibonacci recursivo simples:
+Complexidade de tempo: O(2^n)
+
+Fibonacci com programação dinâmica:
+Complexidade de tempo: O(n)
+
+Portanto, a solução com programação dinâmica é mais eficiente principalmente para valores maiores de n.
