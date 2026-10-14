@@ -1,0 +1,4 @@
+Sim, conseguiria entender o código sem documentá-lo, pois os métodos possuem nomes claros, como adicionar, subtrair,
+multiplicar e dividir, e cada um realiza uma única operação. A implementação é curta e utiliza operadores aritméticos
+conhecidos. Mesmo assim, a documentação ajuda a esclarecer os parâmetros, os retornos e particularidades, como o
+resultado inteiro da divisão e a exceção lançada quando o divisor é zero.
